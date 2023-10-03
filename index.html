@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
+
+    <title>Frontend Mentor | Stats preview card component</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap"
+      rel="stylesheet" />
+
+    <script type="module" src="./main.js" defer></script>
+  </head>
+  <body>
+    <main class="Main">
+      <article class="Article">
+        <header class="Article-header">
+          <picture>
+            <source
+              media="(max-width:639px)"
+              srcset="./images/image-header-mobile.jpg" />
+            <source
+              media="(min-width:640px)"
+              srcset="./images/image-header-desktop.jpg" />
+            <img
+              class="Article-img"
+              src="./images/image-header-desktop.jpg"
+              alt="article image"
+          /></picture>
+        </header>
+        <div class="Article-body">
+          <h1 class="Article-h1">
+            Get <span class="Article-h1--accent">insights</span> that help your
+            business grow.
+          </h1>
+          <p class="Article-p">
+            Discover the benefits of data analytics and make better decisions
+            regarding revenue, customer experience, and overall efficiency.
+          </p>
+          <div class="Article-stats">
+            <ul class="Article-ul">
+              <li class="Article-li">
+                <span class="Article-stat">10k+</span>
+                <h2 class="Article-h2">Companies</h2>
+              </li>
+
+              <li class="Article-li">
+                <span class="Article-stat">314</span>
+                <h2 class="Article-h2">Templates</h2>
+              </li>
+
+              <li class="Article-li">
+                <span class="Article-stat">12M+</span>
+                <h2 class="Article-h2">Queries</h2>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

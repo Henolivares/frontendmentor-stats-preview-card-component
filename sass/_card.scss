@@ -1,0 +1,132 @@
+@use './breakpoints' as *;
+
+.Main {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 5.5rem 0;
+  background-color: var(--clr-main-background);
+
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  grid-template-columns: min(90%, 69.375rem);
+  grid-template-rows: auto;
+}
+
+.Article {
+  background-color: var(--clr-card-background);
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+
+  @include breakpoint(l) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  &-header {
+    position: relative;
+
+    @include breakpoint(l) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: hsl(277, 74%, 41%);
+      opacity: 0.45;
+    }
+  }
+
+  &-body {
+    padding: 2.5rem 2rem 2rem 2rem;
+    text-align: center;
+    display: grid;
+
+    @include breakpoint(l) {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+
+      text-align: left;
+
+      padding: 4.4375rem 4.5rem 3.75rem 4.5rem;
+    }
+  }
+
+  &-h1 {
+    font-size: var(--fs-xl);
+    line-height: var(--lh-xl);
+    font-weight: var(--fw-bold);
+    color: var(--clr-heading);
+
+    margin-bottom: 1rem;
+
+    @include breakpoint(l) {
+      margin-bottom: 1.5625rem;
+    }
+
+    &--accent {
+      color: var(--clr-accent);
+    }
+  }
+
+  &-p {
+    font-size: var(--fs-m);
+    line-height: var(--lh-m);
+    font-weight: var(--fw-regular);
+    color: var(--clr-paragraph);
+
+    margin-bottom: 2.5rem;
+
+    @include breakpoint(s) {
+      margin-bottom: 4.375rem;
+    }
+
+    @include breakpoint(l) {
+      max-width: 40ch;
+    }
+  }
+
+  &-ul {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1.5rem;
+
+    @include breakpoint(s) {
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0;
+    }
+  }
+
+  &-li {
+    display: grid;
+    gap: 0.3125rem;
+  }
+
+  &-stats {
+    align-self: end;
+  }
+
+  &-stat {
+    font-size: var(--fs-l);
+    line-height: var(--lh-l);
+    font-weight: var(--fw-bold);
+    color: var(--clr-heading);
+  }
+
+  &-h2 {
+    font-size: var(--fs-s);
+    line-height: var(--lh-s);
+    font-weight: var(--fw-regular);
+    color: var(--clr-stats);
+    letter-spacing: 0.0625rem;
+    text-transform: uppercase;
+  }
+}
